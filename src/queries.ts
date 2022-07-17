@@ -58,4 +58,31 @@ const GET_EPISODE = gql`
     }
 `
 
-export { GET_ALL_CHARACTERS, GET_PAGE_INFO, GET_CHARACTER, GET_EPISODE }
+const SEARCH_CHARACTER = gql` 
+    query SearchCharacter($query: String!) {
+        characters( filter:{name: $query} ) {
+            info {
+                count
+                pages
+            }
+            results {
+                name
+                id
+                location {
+                    id
+                    name
+                }
+                origin {
+                    id
+                    name
+                }
+                episode {
+                    id
+                    name
+                }
+            }
+        }
+    }
+`
+
+export { GET_ALL_CHARACTERS, GET_PAGE_INFO, GET_CHARACTER, GET_EPISODE, SEARCH_CHARACTER }

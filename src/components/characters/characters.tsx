@@ -4,10 +4,12 @@ import Link from "next/link";
 import Image from "next/image";
 import { useRouter } from "next/router";
 import { CharactersType, CharacterType } from "../../types";
+import { useState } from "react";
 
 const Characters = (characters: CharactersType) => {
     const router = useRouter();
-    const page = Number(router.query.page) || 1;
+    const page = Number(router.query.page) ||   1;
+    const [ search, setSearch ] = useState("");
 
     return (
         <div className="bg-black">
@@ -25,6 +27,17 @@ const Characters = (characters: CharactersType) => {
             </header>
 
             <main>
+                <form onSubmit={async (e) => {
+                    e.preventDefault();
+                    const results = await fetch("/api/searchCharacters", {
+                        method: "post",
+                        body: search
+                    });
+                    const { characters } = await results.json();
+                }}>
+                    <input type="text" placeholder="Search" value={search} onChange={(e) => setSearch(e.target.value)}/>
+                    <button type="submit" onClick={async () => setSearch("")}>Search</button>
+                </form>
                 <div className="list flex flex-wrap flex-col">
                     {characters?.characters.results.map((character: CharacterType) => (
                         <Card {...character} key={character.id} />
