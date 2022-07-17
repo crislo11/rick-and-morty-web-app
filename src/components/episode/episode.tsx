@@ -7,16 +7,17 @@ const Character: React.FC<EpisodeProps> = ( { episode }: EpisodeProps ) => {
     const [ charactersDetail ] = characters;
 
     return (
-        <div className="container">
+        <div className="bg-black">
             <Head>
                 <title>{name}</title>
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
-            <main className="flex w-full flex-1 flex-col items-center justify-center px-20 text-center">
-                <h1 className="title">{name}</h1>
+            <main className="flex flex-wrap detail">
+                <h1>{name}</h1>
                 <div className="profile">
-                    <div className="profile-details">
+                    <div>
+                        <h2 className="text-green-400">Character Details</h2>
                         <ul>
                             <li>
                                 <strong>Name:</strong> {name}
@@ -33,11 +34,11 @@ const Character: React.FC<EpisodeProps> = ( { episode }: EpisodeProps ) => {
                         </ul>
                     </div>
                 </div>
-                <p className="back">
+                <div className="flex flex-wrap actions">
                     <Link href="/">
-                        <a>Back to All Characters</a>
+                        <button>Back to Home</button>
                     </Link>
-                </p>
+                </div>
             </main>
         </div>
     )

@@ -8,53 +8,54 @@ const Character: React.FC<CharacterProps> = ( { character }: CharacterProps ) =>
     const [ episodeDetail ] = episode;
 
     return (
-        <div className="container">
+        <div className="bg-black">
             <Head>
                 <title>{name}</title>
                 <link rel="icon" href="/favicon.ico" />
             </Head>
 
-            <main className="flex w-full flex-1 flex-col items-center justify-center px-20 text-center">
-                <h1 className="title">{name}</h1>
-                <div className="profile">
-                    <div className="profile-image">
-                        <Image src={image} width={'300px'} height={'300px'} alt={`${name} Thumbail`} />
-
+            <main className="flex flex-wrap detail">
+                <h1>{name}</h1>
+                <div className="flex flex-wrap justify-evenly profile">
+                    <div>
+                        <Image className="object-contain" width={'200px'} height={'200px'} src={image} alt={`${name} Thumbail`} />
                     </div>
-                    <div className="profile-details">
-                        <h2>Character Details</h2>
+                    <div>
+                        <h2 className="text-green-400">Character Details</h2>
                         <ul>
                             <li>
-                                <strong>Name:</strong> {name}
+                                <strong className="text-green-400">Name:</strong> {name}
                             </li>
                             <li>
-                                <strong>Location:</strong> {location?.name}
+                                <strong className="text-green-400">Location:</strong> {location?.name}
                             </li>
                             <li>
-                                <strong>Location:</strong> {origin?.name}
+                                <strong className="text-green-400">Location:</strong> {origin?.name}
                             </li>
                             <li>
-                                <strong>Status:</strong> {status}
+                                <strong className="text-green-400">Status:</strong> {status}
                             </li>
                             <li>
-                                <strong>Gender:</strong> {gender}
+                                <strong className="text-green-400">Gender:</strong> {gender}
                             </li>
                             <li>
-                                <strong>Species:</strong> {species}
+                                <strong className="text-green-400">Species:</strong> {species}
                             </li>
-                            <Link href={`/episode/${episodeDetail.id}`}>
-                                <a>
-                                    <strong>Episode:</strong> {episodeDetail.name}
-                                </a>
-                            </Link>
+                            <li>
+                                <strong className="text-green-400">Episode:</strong> {episodeDetail.name}
+                            </li>
+                            
                         </ul>
                     </div>
                 </div>
-                <p className="back">
-                    <Link href="/">
-                        <a>Back to All Characters</a>
+                <div className="flex flex-wrap actions">
+                    <Link href={`/episode/${episodeDetail.id}`}>
+                        <button>Episode Details</button>
                     </Link>
-                </p>
+                    <Link href="/">
+                        <button>Back to Home</button>
+                    </Link>
+                </div>
             </main>
         </div>
     )
