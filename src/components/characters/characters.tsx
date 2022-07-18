@@ -44,14 +44,14 @@ const Characters = (characters: CharactersType) => {
                     ))}
                 </div>
 
-                <div>
+                <div className="flex justify-center flex-wrap pagination">
                     {page > 1 && (
-                        <Link href={`/${page - 1}`} passHref>
+                        <Link href={`/page/${page - 1}`} passHref>
                             <button>Previous Page</button>
                         </Link>
                     )}
 
-                    <Link href={`/${page + 1}`} passHref>
+                    <Link href={`/page/${page + 1}`} passHref>
                         <button>Next Page</button>
                     </Link>
                 </div>
