@@ -5,7 +5,7 @@ This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next
 
 App built on [Next.js](https://nextjs.org), Client [GraphQl](https://graphql.org), [Taildwind CSS](https://tailwindcss.com/), [TypeScript](https://www.typescriptlang.org/) integration to see Rick and Morty characters integrated.
 
-Search, see character details and the fisrt episode of each Character and navigate throuht pagination.
+Search, see character details and the first episode of each Character and navigate throuhgt pagination.
 
 See [Live demo](https://rick-and-morty-web-app.vercel.app/)
 
