@@ -2,7 +2,7 @@ import { ApolloProvider } from "@apollo/client";
 import client from "../../apolloClient";
 import Characters from "../../components/characters/characters";
 import { GET_ALL_CHARACTERS } from "../../queries";
-import { CharactersType } from "../../types";
+import { CharactersType, PageIdProps } from "../../types";
 
 const Page = (characters: CharactersType) => {
   return (
@@ -12,7 +12,7 @@ const Page = (characters: CharactersType) => {
   );
 };
 
-export const getServerSideProps = async ({ query }: any) => {
+export const getServerSideProps = async ({ query }: PageIdProps) => {
   const { page } = query;
   const { data } = await client.query({
     query: GET_ALL_CHARACTERS,

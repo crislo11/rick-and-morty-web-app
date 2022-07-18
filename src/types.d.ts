@@ -61,3 +61,9 @@ export type PagesType = {
     next: Number;
     prev: Number;
 }
+
+export type PageIdProps = {
+    query: {
+        page: Number;
+    }
+}

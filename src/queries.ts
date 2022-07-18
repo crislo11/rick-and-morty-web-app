@@ -66,8 +66,10 @@ const SEARCH_CHARACTER = gql`
                 pages
             }
             results {
-                name
                 id
+                name
+                image
+                status
                 location {
                     id
                     name
