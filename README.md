@@ -1,5 +1,23 @@
 This is a [Next.js](https://nextjs.org/) project bootstrapped with [`create-next-app`](https://github.com/vercel/next.js/tree/canary/packages/create-next-app).
 
+
+## Rick and Morty Web App
+
+App built on [Next.js](https://nextjs.org), Client [GraphQl](https://graphql.org), [Taildwind CSS](https://tailwindcss.com/), [TypeScript](https://www.typescriptlang.org/) integration to see Rick and Morty characters integrated.
+
+Search, see character details and the fisrt episode of each Character and navigate throuht pagination.
+
+See [Live demo](https://rick-and-morty-web-app.vercel.app/)
+
+![Preview](public/demo.png)
+
+## Project Setup
+
+First, run to get everything updated:
+
+```bash
+npm install
+```
 ## Getting Started
 
 First, run the development server:
